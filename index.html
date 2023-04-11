@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Котики</title>
+        <link rel="stylesheet" href="style.css">
+        <script src='cats.js' type='text/javascript'></script>
+	</head>
+	<body>
+        <header>            
+            <div class="header_lefttext">Котики</div>                
+            <div class="header_righttext">Воронов Александр Анатольевич</div>            
+        </header>
+        <div class="main_container">
+            <div class="cards">
+                <script>
+                    function createDescribePoint(parentElement, label, value, useBold = true){
+                        let paragraph = document.createElement("p");
+
+                        parentElement.appendChild(paragraph);
+                        
+                        let underlineLabel = document.createElement("u");
+                        underlineLabel.innerHTML = "<i>" + label + ":</i>";
+
+                        if (useBold == true){
+                            paragraph.innerHTML = underlineLabel.outerHTML + "<b> " + value + "</b>";
+                        }
+                        else {                            
+                            paragraph.innerHTML = underlineLabel.outerHTML + " " + value;
+                        }                        
+                    }
+                    
+                    let card, cat_img;
+
+                    cats.forEach(cat => {
+                        card = document.createElement("div");
+                        card.className = "card";
+
+                        cardsContainer = document.getElementsByClassName("cards")[0];
+                        cardsContainer.appendChild(card);
+
+                        cat_img = document.createElement("img");
+                        cat_img.src = cat.img_link;
+                        
+                        card.appendChild(cat_img);
+
+                        createDescribePoint(card, "Имя", cat.name);
+                        createDescribePoint(card, "Возраст", cat.age);
+                        createDescribePoint(card, "Рейтинг", cat.rate);
+                        createDescribePoint(card, "Фаворит", (cat.favourite == true) ? "Да" : "Нет");
+                        createDescribePoint(card, "Идентификатор", cat.id);
+                        createDescribePoint(card, "Описание", cat.description, false);
+                    });
+                </script>
+            </div>
+        </div>
+        <footer>Все права защищены ©</footer>
+    </body>
+</html>

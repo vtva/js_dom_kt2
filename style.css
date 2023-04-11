@@ -1,0 +1,49 @@
+header {
+    background-color: #5c5af3; 
+    color: white;   
+    padding: 30px;
+}
+.header_lefttext {
+    text-align: left;
+    font-size: xx-large;
+    display: inline-block;
+}
+.header_righttext {
+    margin-top: 10px;
+    float: right;
+    font-size: medium;
+    display: inline-block;
+}
+.main_container {
+    display: inline;
+    padding: 30px 30px 30px 30px;
+    font-size: large;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    margin-left: 5vw;
+}
+.card {
+    background-color: #d4edf5;
+    margin: 20px;
+    padding: 20px;
+    width: 35vw;
+    height: 300px;
+    overflow: hidden;
+}
+.card img{
+    float: right;
+    margin: 10px 10px 10px 10px;
+    width: 50%;
+    max-height: 60%;
+    object-fit: cover;
+}
+footer {
+    background-color: #5c5af3;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: large;
+}
